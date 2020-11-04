@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:black;
+}
+.main{
+    position: absolute;
+    top: 40vh;
+    background-color: black;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 110px;
+    overflow: hidden;
+}
+.pac{
+    z-index: 3;
+    display: inline-block;
+    position: absolute;
+    background-color: yellow;
+    top: 10px;
+    height: 80%;
+    width: 80px;
+    border-radius: 50%;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.cover{
+    z-index: 2;
+    position: relative;
+    
+    background-color: black;
+    height: 100%;
+    animation-name: move_cover;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.black{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 45%;
+    clip-path: polygon(100% 84%, 36% 50%, 100% 10%);
+    animation-name: mouth;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    
+   
+  
+}
+.inside{
+   display: inline-block;
+   position: relative;
+   top:7px;
+   list-style: none;
+   margin:  20px;
+   width: 30px;
+   height: 30px;
+   background-color: white;
+   border-radius: 50%;
+   
+}
+.eat{
+    position: absolute;
+    top: 15px;
+    left: 80px;
+    width: 100vw;
+}
+@keyframes mouth{
+    0%{
+        clip-path: polygon(100% 50%, 36% 50%, 100% 50%);
+
+    }
+    100%{
+        clip-path: polygon(100% 84%, 36% 50%, 100% 10%);
+    }
+}
+@keyframes move{
+    0%{
+        transform: translatex(-20px);
+        
+    }
+    100%{
+        transform: translateX(120vw);
+    }
+}
+@keyframes move_cover{
+    0%{
+        width: 0vw;
+        
+        
+    }
+    100%{
+       
+        width: 120vw;
+    }
+}
